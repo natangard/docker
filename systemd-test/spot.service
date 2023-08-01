@@ -1,0 +1,12 @@
+[Unit]
+Description=scalp-spot-servive
+After=multi-user.target
+
+[Service]
+Type=idle
+Restart=always
+WorkingDirectory=/sse/src
+ExecStart=/usr/bin/python3 -m scalp.spot
+
+[Install]
+WantedBy=multi-user.target
