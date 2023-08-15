@@ -5,7 +5,11 @@ After=multi-user.target
 [Service]
 Type=idle
 Restart=always
-WorkingDirectory=/sse/src
+StartLimitBurst=0
+User=natan
+Restart=on-failure
+RuntimeMaxSec=24h
+WorkingDirectory=/home/natan/sse/spot-signal-emitter/src
 ExecStart=/usr/bin/python3 -m scalp.spot
 
 [Install]
